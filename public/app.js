@@ -1,7 +1,8 @@
 //自分自身の情報を入れる
 const IAM = {
     token: null,  // トークン
-    name: null    // 名前
+    name: null,   // 名前
+    te: 0         //手
 };
 
 //-------------------------------------
@@ -78,7 +79,7 @@ $("#janken_gu").addEventListener("submit", (e) => {
     e.preventDefault();
 
     const msg = "グー";
-
+    const te = 1;
     socket.emit("post", {
         text: msg,
         token: IAM.token,
@@ -90,6 +91,7 @@ $("#janken_choki").addEventListener("submit", (e) => {
     e.preventDefault();
 
     const msg = "チョキ";
+    const te = 2;
 
     socket.emit("post", {
         text: msg,
@@ -102,6 +104,7 @@ $("#janken_pa").addEventListener("submit", (e) => {
     e.preventDefault();
 
     const msg = "パー";
+    const te = 3;
 
     socket.emit("post", {
         text: msg,
